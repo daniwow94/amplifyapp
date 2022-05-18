@@ -1,7 +1,7 @@
 import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
-const Home = () => {
+const Results = () => {
     return (
         <Authenticator>
             {({ signOut }) =>(
@@ -19,4 +19,4 @@ const Home = () => {
     return <h1>Home page v2</h1>
 };*/
 
-export default Home;
+export default Results;
