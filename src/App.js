@@ -1,15 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import PremiumPage from './pages/PremiumPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello from V2</h1>
-      </header>
-    </div>
+      <Router>
+        <div className="content">
+          <NavLink className="content" exact activClassName="active" to="/">Home</NavLink>
+          <NavLink className="content" activClassName="active" to="/about">About</NavLink>
+          <NavLink className="content" activClassName="active" to="/premium">Premium Content</NavLink>
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/premium" element={<PremiumPage />}></Route>
+        </Routes>
+      </Router>
+    </div> 
   );
 }
 
